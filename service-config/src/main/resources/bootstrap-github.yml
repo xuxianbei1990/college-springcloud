@@ -1,0 +1,30 @@
+server:
+  port: 8888
+
+# 配置加载的顺序是：
+ #bootstrap 2.远程config的配置 3.application
+
+#encrypt:
+#  key: bond
+
+
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      name: config-server
+      server:
+        git:
+          uri: https://github.com/xuxianbei1990/springcloud-config.git
+          username:
+          password:
+          basedir: E:\java\code\template
+          search-paths: config
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8877/eureka

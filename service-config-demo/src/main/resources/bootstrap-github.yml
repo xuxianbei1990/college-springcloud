@@ -1,0 +1,14 @@
+#test:
+#  namexxb: hello world
+server:
+  port: 8802
+  context-path: /demo
+#对应git路径/{demo}-{profile} 其中lable 对应分支
+spring:
+  application:
+    name: demo
+  cloud:
+    config:
+      uri: http://127.0.0.1:8888
+      profile: xxb
+      label: master

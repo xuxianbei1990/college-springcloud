@@ -1,0 +1,9 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8877/eureka/
+server:
+  port: 8032
+spring:
+  application:
+    name: service-web-fegin

@@ -1,0 +1,9 @@
+rootProject.name = 'college-springcloud'
+include 'register-center'
+include 'service-demo'
+include 'service-config'
+include 'service-config-demo'
+include 'service-web-fegin'
+include 'college-base'
+include 'service-base'
+

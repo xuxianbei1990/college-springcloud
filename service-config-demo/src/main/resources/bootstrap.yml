@@ -1,0 +1,14 @@
+#test:
+#  namexxb: hello world
+server:
+  port: 8802
+  context-path: /demo
+#对应svn路径/{label}/{application}-{profile}
+spring:
+  application:
+    name: adminservice
+  cloud:
+    config:
+      uri: http://127.0.0.1:8888
+      profile: wlb
+      label: admin-service

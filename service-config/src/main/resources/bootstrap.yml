@@ -1,0 +1,33 @@
+server:
+  port: 8888
+
+# 配置加载的顺序是：
+ #bootstrap 2.远程config的配置 3.application
+
+encrypt:
+  key: bond
+
+
+spring:
+  application:
+    name: linkiebuy-config-server
+  cloud:
+    config:
+      name: linkiebuy-config-server
+      server:
+        svn:
+          uri: svn://120.76.191.123/linkiebuy/service/linkiebuy-config
+          username: li_chunming
+          password: li@cm#
+#          指定查看本地
+          basedir: E:\java\code\template
+#         一般是 {application} 对应的是项目
+          search-paths: linkiebuy-config
+          default-label: trunk
+  profiles:
+     active: subversion
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8877/eureka
