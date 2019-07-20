@@ -6,4 +6,5 @@ include 'service-config-demo'
 include 'service-web-fegin'
 include 'college-base'
 include 'service-base'
+include 'service-gateway'
 
