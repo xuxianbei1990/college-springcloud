@@ -11,9 +11,9 @@ import java.util.List;
  * Date: 2019/7/15
  * Time: 18:13
  * Version:V1.0
+ *  配合service-demo 一起使用
  */
 @RestController
-@RequestMapping("/fegin")
 public class TestFeginController {
 
     @GetMapping("/getStudents")

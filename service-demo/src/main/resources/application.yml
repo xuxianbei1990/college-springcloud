@@ -7,3 +7,9 @@ server:
 spring:
   application:
     name: demo
+
+
+feign:
+   hystrix:
+     enabled: true
+

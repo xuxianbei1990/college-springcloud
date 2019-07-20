@@ -1,0 +1,22 @@
+server:
+  port: 8200
+
+spring:
+  application:
+    name: service-zuul
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8877/eureka/
+
+zuul:
+  routes:
+#    名字随意
+    web-fegin-api:
+      path: /fegin/**
+      service-id: service-web-fegin
+#      转发时候是否跳过名字
+      stripPrefix: false
+
+

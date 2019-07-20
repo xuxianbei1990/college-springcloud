@@ -3,7 +3,8 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8877/eureka/
 server:
-  port: 8032
+  port: 8033
+  context-path: /fegin
 spring:
   application:
     name: service-web-fegin

@@ -26,13 +26,12 @@ public interface StoreClient {
 
     //为什么这里需要加参数说明，不能自动转换？
     //答：这个要从反射的原理说明。巴拉巴拉
-    @RequestMapping(value = "/getString",  method = RequestMethod.GET)
+    @RequestMapping(value = "/getString", method = RequestMethod.GET)
     String getString(@RequestParam("key") String key);
 
     //这个感觉不是特别友好。
     //我的解决思路是在原有的基础在封装一层；把所有参数序列化为字符串再进行传输
     @RequestMapping(value = "/getStudent", method = RequestMethod.POST)
     Student getStudent(@RequestBody Student student);
-
 
 }
