@@ -7,4 +7,7 @@ include 'service-web-fegin'
 include 'college-base'
 include 'service-base'
 include 'service-gateway'
+include 'service-hystrix'
+include 'service-client-config'
+include 'register-center-config'
 
