@@ -9,4 +9,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8877/eureka/
+      defaultZone: http://localhost:6877/eureka/

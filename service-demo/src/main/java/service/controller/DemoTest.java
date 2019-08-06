@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import common.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import service.fegin.LoadBalanceClient;
 import service.fegin.StoreClient;
@@ -19,6 +20,7 @@ import javax.annotation.Resource;
 @RestController
 public class DemoTest {
 
+
     //测试ribbon
     @Autowired
     LoadBalanceClient loadBalanceClient;
@@ -30,6 +32,12 @@ public class DemoTest {
     @GetMapping("/demo/test")
     public String testFegin() {
         return "testFegin";
+    }
+
+    //测试所有请求
+    @RequestMapping("/test/quest")
+    public String testQuest() {
+        return "success";
     }
 
     //测试远程调用
