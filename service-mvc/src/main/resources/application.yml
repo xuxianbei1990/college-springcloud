@@ -3,8 +3,13 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:6877/eureka/
 server:
-  port: 8033
-  context-path: /fegin
+  port: 8763
 spring:
   application:
-    name: college.springcloud.service-web-fegin
+    name: mvc
+
+
+feign:
+   hystrix:
+     enabled: true
+

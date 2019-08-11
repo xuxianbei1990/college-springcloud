@@ -30,12 +30,6 @@ dependencies {
 }
 
 
-//jar {
-//    from('src/main/java') {
-//        include 'com/xingyun/linkiebuy/*/mapper/*.xml'
-//    }
-//}
-
 sourceSets {
     main {
         resources {

@@ -16,7 +16,7 @@ spring:
       name: linkiebuy-config-server
       server:
         svn:
-          uri: svn://120.76.191.123/linkiebuy/service/linkiebuy-config
+          uri: svn://120.76.191.123/linkiebuy/college.springcloud.service/linkiebuy-config
           username: li_chunming
           password: li@cm#
 #          指定查看本地

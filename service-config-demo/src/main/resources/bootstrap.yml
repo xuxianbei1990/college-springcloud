@@ -11,4 +11,4 @@ spring:
     config:
       uri: http://127.0.0.1:8888
       profile: wlb
-      label: admin-service
+      label: admin-college.springcloud.service

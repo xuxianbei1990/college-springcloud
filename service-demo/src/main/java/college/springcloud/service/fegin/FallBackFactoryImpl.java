@@ -1,4 +1,4 @@
-package service.fegin;
+package college.springcloud.service.fegin;
 
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;

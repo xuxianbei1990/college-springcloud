@@ -1,4 +1,4 @@
-package service.fegin;
+package college.springcloud.service.fegin;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Time: 11:18
  * Version:V1.0
  */
-@FeignClient(value = "service-web-fegin")
+@FeignClient(value = "college.springcloud.service-web-fegin")
 @RequestMapping("/ribbon")
 public interface LoadBalanceClient {
 

@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: service-zuul
+    name: college.springcloud.service-zuul
 
 eureka:
   client:
@@ -15,7 +15,7 @@ zuul:
 #    名字随意
     web-fegin-api:
       path: /fegin/**
-      service-id: service-web-fegin
+      service-id: college.springcloud.service-web-fegin
 #      转发时候是否跳过名字
       stripPrefix: false
 

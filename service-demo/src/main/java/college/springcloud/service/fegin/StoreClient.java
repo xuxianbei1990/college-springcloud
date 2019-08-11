@@ -1,6 +1,6 @@
-package service.fegin;
+package college.springcloud.service.fegin;
 
-import common.model.Student;
+import college.springcloud.model.Student;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ import java.util.List;
  */
 //突然我想让FeignClient 支持Rest 后面试验下
 //支持所有的请求方式
-@FeignClient("service-web-fegin")
+@FeignClient("college.springcloud.service-web-fegin")
 @RequestMapping("/fegin")
 public interface StoreClient {
 

@@ -1,6 +1,9 @@
-package service.controller;
+package college.springcloud.service.controller;
 
-import common.model.StudentValidated;
+import com.alibaba.fastjson.JSONObject;
+import college.springcloud.model.ClassInner;
+import college.springcloud.model.ClassValidated;
+import college.springcloud.model.StudentValidated;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,5 +41,18 @@ public class DemoTestValidatedController {
     @GetMapping("/demo/valid/update")
     public String demoValidUpdate(@Validated(StudentValidated.Update.class) @RequestBody StudentValidated student) {
         return "success";
+    }
+
+
+    @PostMapping("/demo/valid/select/inner")
+    public String demoValidSelect(@RequestBody @Validated(ClassValidated.add.class) ClassValidated student) {
+        return "success";
+    }
+
+    public static void main(String[] args) {
+        ClassValidated classValidated = new ClassValidated();
+        classValidated.setClassInner(new ClassInner());
+        classValidated.getClassInner().setName("xxb");
+        System.out.println(JSONObject.toJSONString(classValidated));
     }
 }

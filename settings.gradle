@@ -10,4 +10,5 @@ include 'service-gateway'
 include 'service-hystrix'
 include 'service-client-config'
 include 'register-center-config'
-
+include 'service-mvc'
+include 'service-admin'

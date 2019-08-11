@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/fallback")
 public class TestFeginFallBackController {
 
-    @GetMapping("/test/exception")
+    @GetMapping("/test/college.springcloud.exception")
     public String feginFallBackException() {
         throw new RuntimeException("error");
     }

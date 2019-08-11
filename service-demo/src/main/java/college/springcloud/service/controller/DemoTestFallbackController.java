@@ -1,4 +1,4 @@
-package service.controller;
+package college.springcloud.service.controller;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Component;
@@ -25,15 +25,15 @@ public class DemoTestFallbackController {
         return fallBackRPC.fallbackTest("success");
     }
 
-    @GetMapping("/test/exception")
+    @GetMapping("/test/college.springcloud.exception")
     public String testFallbackExcption() {
         return fallBackRPC.feginFallBackException("success");
     }
 
-    @FeignClient(value = "service-web-fegin", path = "/fegin/fallback", fallback = FallBackRPCImpl.class)
+    @FeignClient(value = "college.springcloud.service-web-fegin", path = "/fegin/fallback", fallback = FallBackRPCImpl.class)
     protected interface FallBackRPC {
 
-        @RequestMapping(value = "/test/exception", method = RequestMethod.GET)
+        @RequestMapping(value = "/test/college.springcloud.exception", method = RequestMethod.GET)
         String feginFallBackException(@RequestParam("key") String key);
 
         @RequestMapping(value = "/test/success", method = RequestMethod.GET)
