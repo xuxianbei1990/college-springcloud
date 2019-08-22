@@ -1,11 +1,12 @@
 package college.springcloud.service.controller;
 
-import com.alibaba.fastjson.JSONObject;
+import college.springcloud.cache.redis.RedisService;
 import college.springcloud.model.Student;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 import college.springcloud.service.fegin.LoadBalanceClient;
 import college.springcloud.service.fegin.StoreClient;
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -31,9 +32,29 @@ public class DemoTest {
     @Resource
     StoreClient storeClient;
 
+    @Autowired
+    RedisService redisService;
+
     @GetMapping("/demo/test")
     public String testFegin() {
         return "testFegin";
+    }
+
+    @FunctionalInterface
+    interface Test {
+        void sayHay(String message);
+    }
+
+    public static void main(String[] args) {
+        Test test = (message) -> {
+            System.out.println("2" + message);
+        };
+        test.sayHay("ss");
+    }
+
+    @GetMapping("/redis/get")
+    public String redisGet() {
+        return redisService.getRedisConfig().getHost();
     }
 
     //测试所有请求

@@ -15,6 +15,17 @@ spring:
     client:
       ipAddress: 192.168.2.15
 
+redis:
+  database: 0
+  host: 112.74.42.171
+  password: linkiebuy@com
+  pool.max-active: 8
+  pool.max-idle: 8
+  pool.max-wait: -1
+  pool.min-idle: 0
+  port: 6379
+  timeout: 5000
+
 
 feign:
    hystrix:

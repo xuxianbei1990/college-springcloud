@@ -1,5 +1,6 @@
 package college.springcloud.service.controller;
 
+import college.springcloud.service.model.CarNumberValidate;
 import com.alibaba.fastjson.JSONObject;
 import college.springcloud.model.ClassInner;
 import college.springcloud.model.ClassValidated;
@@ -48,6 +49,12 @@ public class DemoTestValidatedController {
     public String demoValidSelect(@RequestBody @Validated(ClassValidated.add.class) ClassValidated student) {
         return "success";
     }
+
+    @PostMapping("/demo/valid/carnumber")
+    public CarNumberValidate validateCarNumber(@RequestBody @Validated CarNumberValidate carNumberValidate){
+        return carNumberValidate;
+    }
+
 
     public static void main(String[] args) {
         ClassValidated classValidated = new ClassValidated();
