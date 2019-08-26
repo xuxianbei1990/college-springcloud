@@ -52,7 +52,7 @@ public class DemoTestValidatedController {
 
     @PostMapping("/demo/valid/carnumber")
     public CarNumberValidate validateCarNumber(@RequestBody @Validated CarNumberValidate carNumberValidate){
-        return carNumberValidate;
+            return carNumberValidate;
     }
 
 

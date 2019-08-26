@@ -1,0 +1,50 @@
+//表明这个工程是通过java编译的
+apply plugin: 'java'
+apply plugin: 'application'
+//添加spirngboot插件
+apply plugin: 'org.springframework.boot'
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+    compile 'org.springframework.cloud:spring-cloud-starter-feign'
+    compile project(':service-base')
+    compile("com.alibaba:fastjson:1.2.16")
+    compile 'org.projectlombok:lombok:1.18.6'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+
+
+//jar {
+//    from('src/main/java') {
+//        include 'com/xingyun/linkiebuy/*/mapper/*.xml'
+//    }
+//}
+
+sourceSets {
+    main {
+        resources {
+            //可以将java目录下的所有非.java资源打包到classes下
+            srcDirs = ['src/main/java', 'src/main/resources']
+        }
+    }
+}
