@@ -2,26 +2,26 @@ server:
   port: 6877
 eureka:
   instance:
-#    将本机注册ip；IP注册到Eureka Server上 测试无效 以下是版本
-#springBootVersion = '1.5.13.RELEASE'
-#	springCloudVersion = 'Edgware.SR3'
+    #    将本机注册ip；IP注册到Eureka Server上 测试无效 以下是版本
+    #springBootVersion = '1.5.13.RELEASE'
+    #	springCloudVersion = 'Edgware.SR3'
     prefer-ip-address: true
     #心跳间隔5秒；client刷新远程服务列表；
     leaseRenewalIntervalInSeconds: 5
     #没有心跳的淘汰时间10秒；断点调试可以设置大些；设置太大，如果服务挂了，会造成流量丢失。
-#    说明springcloud在发送数据默认认为服务就是可以用的。
+    #    说明springcloud在发送数据默认认为服务就是可以用的。
     leaseExpirationDurationInSeconds: 10
   client:
-#  1.eureka.client.registerWithEureka=true #是否将自身注册
-#  2.eureka.client.fetchRegistry=false #如果为true，启动时报警.
-#  4.5打开eureka server 界面的
-    registerWithEureka: true
-    fetchRegistry: true
+    #  1.eureka.client.registerWithEureka=true #是否将自身注册
+    #  2.eureka.client.fetchRegistry=false #如果为true，启动时报警.
+    #  4.5打开eureka server 界面的
+    registerWithEureka: false
+    fetchRegistry: false
     serviceUrl:
       defaultZone: http://localhost:${server.port}/eureka/
-#      https://cloud.spring.io/spring-cloud-static/Edgware.SR3/single/spring-cloud.html
+  #      https://cloud.spring.io/spring-cloud-static/Edgware.SR3/single/spring-cloud.html
   server:
-#  服务自我保护
+    #  服务自我保护
     enable-self-preservation: false
 
 

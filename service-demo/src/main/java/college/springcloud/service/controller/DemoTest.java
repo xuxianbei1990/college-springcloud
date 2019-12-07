@@ -75,6 +75,7 @@ public class DemoTest {
         return student.toString();
     }
 
+
     @PostMapping("/test/post/xml")
     public HttpServletResponse testPostXml(HttpServletRequest request, HttpServletResponse response) {
 
@@ -116,6 +117,11 @@ public class DemoTest {
         //列表
         result = result + "\n student: \n" + JSONObject.toJSONString(storeClient.getStudents());
         return result;
+    }
+
+    @PostMapping("/demo/student/api")
+    public Integer stduentApi(@RequestBody Student student) {
+        return storeClient.getStudentInt(student);
     }
 
     //测试负载均衡

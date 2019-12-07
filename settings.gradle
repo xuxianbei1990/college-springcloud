@@ -12,3 +12,6 @@ include 'service-client-config'
 include 'register-center-config'
 include 'service-mvc'
 include 'service-admin'
+include 'service-elasticsearch'
+include 'service-design'
+

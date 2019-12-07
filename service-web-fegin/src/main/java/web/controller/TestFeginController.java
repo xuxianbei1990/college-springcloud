@@ -44,4 +44,9 @@ public class TestFeginController {
     public Student getStudent(@RequestBody Student student) {
         return student;
     }
+
+    @PostMapping(value = "/getStudent/Integer")
+    public Integer getStudentInt(@RequestBody Student student) {
+        return 1;
+    }
 }

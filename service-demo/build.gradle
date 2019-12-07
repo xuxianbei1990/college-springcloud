@@ -30,6 +30,8 @@ dependencies {
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
 
+executableDir="college.springcloud.service"
+
 
 //jar {
 //    from('src/main/java') {

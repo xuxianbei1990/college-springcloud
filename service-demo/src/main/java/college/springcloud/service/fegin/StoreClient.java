@@ -2,10 +2,7 @@ package college.springcloud.service.fegin;
 
 import college.springcloud.model.Student;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,5 +30,8 @@ public interface StoreClient {
     //我的解决思路是在原有的基础在封装一层；把所有参数序列化为字符串再进行传输
     @RequestMapping(value = "/getStudent", method = RequestMethod.POST)
     Student getStudent(@RequestBody Student student);
+
+    @PostMapping(value = "/getStudent/Integer")
+    Integer getStudentInt(@RequestBody Student student);
 
 }
