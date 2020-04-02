@@ -1,10 +1,11 @@
 package college.springcloud.service.controller;
 
-import college.springcloud.service.model.CarNumberValidate;
-import com.alibaba.fastjson.JSONObject;
 import college.springcloud.model.ClassInner;
 import college.springcloud.model.ClassValidated;
+import college.springcloud.model.ListStudentValidDated;
 import college.springcloud.model.StudentValidated;
+import college.springcloud.service.model.CarNumberValidate;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,6 +49,16 @@ public class DemoTestValidatedController {
     @PostMapping("/demo/valid/select/inner")
     public String demoValidSelect(@RequestBody @Validated(ClassValidated.add.class) ClassValidated student) {
         return "success";
+    }
+
+    /**
+     * 无法对List<StudentValidated> 校验
+     * @param student
+     * @return
+     */
+    @PostMapping("/demo/valid/list")
+    public String demoValidList(@RequestBody @Validated ListStudentValidDated student) {
+        return student.toString();
     }
 
     @PostMapping("/demo/valid/carnumber")

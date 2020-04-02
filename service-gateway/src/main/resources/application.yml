@@ -18,5 +18,7 @@ zuul:
       service-id: college.springcloud.service-web-fegin
 #      转发时候是否跳过名字
       stripPrefix: false
+#      配置隔离策略为信号量
+  ribbon-isolation-strategy: semaphore
 
 
