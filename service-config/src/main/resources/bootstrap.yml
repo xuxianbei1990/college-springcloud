@@ -16,9 +16,9 @@ spring:
       name: linkiebuy-config-server
       server:
         svn:
-          uri: svn://120.76.191.123/linkiebuy/college.springcloud.service/linkiebuy-config
-          username: li_chunming
-          password: li@cm#
+          uri: svn://XXX/linkiebuy/college.springcloud.service/linkiebuy-config
+          username: XXX
+          password: XXX
 #          指定查看本地
           basedir: E:\java\code\template
 #         一般是 {application} 对应的是项目

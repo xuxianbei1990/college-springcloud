@@ -7,7 +7,7 @@ elastic:
 #  hostlist: 192.168.0.109:9200
   ip: 192.168.0.109
   port: 9200
-  cluster: LinkieBuy-cluster
+  cluster: xxx
   index: linkiebuy
   type: doc
   pageSize: 20
