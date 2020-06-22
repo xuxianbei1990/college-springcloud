@@ -13,7 +13,7 @@ import java.util.List;
  * Version:V1.0
  */
 //突然我想让FeignClient 支持Rest 后面试验下
-//支持所有的请求方式
+//支持所有的请求方式 就是这个 "org.springframework.cloud:spring-cloud-starter-openfeign"
 @FeignClient("college.springcloud.service-web-fegin")
 @RequestMapping("/fegin")
 public interface StoreClient {
