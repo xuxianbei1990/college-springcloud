@@ -112,10 +112,14 @@ public class DemoTest {
         student.setName("dsf");
         student.setAge(112);
         //类
-        student = storeClient.getStudent(student);
-        result = result + "\n student: \n" + JSONObject.toJSONString(student);
-        //列表
-        result = result + "\n student: \n" + JSONObject.toJSONString(storeClient.getStudents());
+//        student = storeClient.getStudent(student);
+//        result = result + "\n student: \n" + JSONObject.toJSONString(student);
+//        //列表
+//        result = result + "\n student: \n" + JSONObject.toJSONString(storeClient.getStudents());
+        result = result + "\n studentNOQueryMap: \n" +storeClient.getStudentNOQueryMap(student);
+        result = result + "\n studentQueryMap: \n" + storeClient.getStudentQueryMap(student);
+
+
         return result;
     }
 

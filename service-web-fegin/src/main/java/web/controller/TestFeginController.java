@@ -1,6 +1,7 @@
 package web.controller;
 
 import college.springcloud.model.Student;
+import feign.QueryMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.List;
  * Date: 2019/7/15
  * Time: 18:13
  * Version:V1.0
- *  配合service-demo 一起使用
+ * 配合service-demo 一起使用
  */
 @RestController
 public class TestFeginController {
@@ -40,13 +41,23 @@ public class TestFeginController {
         return key;
     }
 
-    @PostMapping(value = "/getStudent")
-    public Student getStudent(@RequestBody Student student) {
-        return student;
+    @PostMapping("/getString/queryMap")
+    public Student getStudentQueryMap(Student key) {
+        return key;
     }
 
-    @PostMapping(value = "/getStudent/Integer")
-    public Integer getStudentInt(@RequestBody Student student) {
-        return 1;
+    @PostMapping("/getString/queryMap/no")
+    public Student getStudentNOQueryMap(Student key) {
+        return key;
     }
+
+//    @PostMapping(value = "/getStudent")
+//    public Student getStudent(@RequestBody Student student) {
+//        return student;
+//    }
+//
+//    @PostMapping(value = "/getStudent/Integer")
+//    public Integer getStudentInt(@RequestBody Student student) {
+//        return 1;
+//    }
 }

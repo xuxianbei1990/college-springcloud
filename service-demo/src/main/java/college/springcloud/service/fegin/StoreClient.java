@@ -1,6 +1,7 @@
 package college.springcloud.service.fegin;
 
 import college.springcloud.model.Student;
+import feign.QueryMap;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,11 +19,11 @@ import java.util.List;
 @RequestMapping("/fegin")
 public interface StoreClient {
 
-    @RequestMapping(value = "/getStudents", method = RequestMethod.GET)
-    List<Student> getStudents();
+//    @RequestMapping(value = "/getStudents", method = RequestMethod.GET)
+//    List<Student> getStudents();
 
-    //为什么这里需要加参数说明，不能自动转换？
-    //答：这个要从反射的原理说明。巴拉巴拉
+//    //为什么这里需要加参数说明，不能自动转换？
+//    //答：这个要从反射的原理说明。巴拉巴拉
     @RequestMapping(value = "/getString", method = RequestMethod.GET)
     String getString(@RequestParam("key") String key);
 
@@ -33,5 +34,12 @@ public interface StoreClient {
 
     @PostMapping(value = "/getStudent/Integer")
     Integer getStudentInt(@RequestBody Student student);
+
+    //低版本如果多参数强制把get转换成post？
+    @GetMapping("/getString/queryMap/no")
+    Student getStudentNOQueryMap(Student key);
+
+    @GetMapping("/getString/queryMap")
+    Student getStudentQueryMap(@QueryMap Student key);
 
 }
